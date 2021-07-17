@@ -1,12 +1,27 @@
 import Sample from './Sample'
-import SampleClass  from './SaampleClass';
+import Login  from './Login';
+import LoginFunctional  from './LoginFunctional';
+import 'bootstrap/dist/css/bootstrap.min.css'
+import Home from './Home';
+import {
+  BrowserRouter,
+  Switch,
+  Route
+} from 'react-router-dom'
 function App(){
   return <div> <h1>HELLO WORLD!! </h1>
-   <Sample name="user1" last="last1"/>
-   <Sample  name="user2" last="last2"/>
+   {/* <Sample name="user1" last="last1"/> */}
 
-   <Sample name="user3" last="last3"/>
-   <SampleClass name="classuser" last="classlast" name1="cluser1" last1="cllast1"/>
+   <BrowserRouter>
+   <Switch>
+  <Route path="/" exact>
+   <LoginFunctional/>
+   </Route>
+   <Route path="/home">
+     <Home />
+   </Route>
+   </Switch>
+   </BrowserRouter>
    
 
 
